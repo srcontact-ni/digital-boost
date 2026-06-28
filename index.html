@@ -63,9 +63,14 @@
         </div>
     </header>
 
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-15%] left-[10%] sm:left-[20%] w-[450px] sm:w-[650px] h-[450px] sm:h-[650px] bg-gradient-to-tr from-amber-300 via-orange-400 to-rose-400 rounded-full blur-[80px] sm:blur-[130px] opacity-50 sm:opacity-45 animate-glow"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-50 pointer-events-none"></div>
+    <!-- UNIQUE BACKGROUND LUMINEUX DU SOMMET : Intense, radial et fondu parfait vers le gris/stone-50 -->
+    <div class="absolute top-0 left-0 right-0 w-full h-[750px] pointer-events-none z-0 overflow-hidden select-none">
+        <div class="absolute inset-0 opacity-80 mix-blend-multiply sm:opacity-90 animate-glow"
+            style="background: radial-gradient(circle 450px at 50% 15%, rgba(255, 69, 0, 0.45) 0%, rgba(249, 115, 22, 0.3) 40%, rgba(245, 158, 11, 0.15) 70%, transparent 100%);">
+        </div>
+        <div class="absolute inset-0 opacity-50 sm:opacity-60"
+            style="background: radial-gradient(circle 600px at 50% 10%, rgba(249, 115, 22, 0.25) 0%, rgba(251, 146, 60, 0.1) 50%, transparent 100%);">
+        </div>
     </div>
 
     <section class="relative min-h-screen flex items-center pt-20 pb-12 z-10 w-full max-w-full box-border">
