@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- 1. VRAI FIX : On force le HTML et le BODY à faire STRICTEMENT la largeur de l'appareil, sans un pixel de plus -->
 <html lang="fr" class="scroll-smooth w-full max-w-full overflow-x-hidden m-0 p-0">
 <head>
     <meta charset="UTF-8">
@@ -16,28 +15,15 @@
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-amber-200 w-full max-w-full overflow-x-hidden m-0 p-0">
 
-    <!-- ÉLÉMENTS LUMINEUX DE FOND (Le fond orange) -->
-    <!-- 2. VRAI FIX : On utilise 'max-w-full' et 'overflow-hidden' ici pour que les ronds de couleur ne poussent JAMAIS les murs du site sur mobile -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-full h-[600px] pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-10%] left-[5%] sm:left-[20%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gradient-to-tr from-amber-300 to-orange-400 rounded-full blur-[80px] sm:blur-[120px] animate-glow"></div>
-        <div class="absolute top-[20%] right-[5%] w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-gradient-to-br from-orange-300 to-rose-400 rounded-full blur-[70px] sm:blur-[100px] animate-glow" style="animation-delay: -4s;"></div>
-    </div>
-
-    <!-- NAVIGATION (Header / Nav) -->
-    <!-- 3. VRAI FIX : Au lieu de w-full qui bug en fixed, on utilise left-0 right-0 avec max-w-full -->
     <header class="fixed top-0 left-0 right-0 max-w-full z-50 bg-stone-50/80 backdrop-blur-md border-b border-stone-200/30">
         <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center w-full box-border">
-            
-            <!-- Logo -->
             <a href="https://srcontact-ni.github.io/digital-boost/index.html" class="text-lg font-black tracking-tight text-stone-900 flex items-center gap-2 hover:text-orange-600 transition-colors group z-50">
                 <span class="w-2.5 h-2.5 bg-orange-500 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.5)]"></span>
                 <span>digital.boost</span>
             </a>
             
-            <!-- Liens Desktop -->
             <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-stone-600">
-                <a href="https://srcontact-ni.github.io/digital-boost/index.html#services" class="hover:text-orange-600 transition-colors">Services</a>
-                
+                <a href="#services" class="hover:text-orange-600 transition-colors">Services</a>
                 <div class="relative group py-2">
                     <button class="flex items-center gap-1 hover:text-orange-600 transition-colors font-semibold text-sm cursor-pointer focus:outline-none">
                         <span>Projets</span>
@@ -54,15 +40,14 @@
                         <a href="https://srcontact-ni.github.io/digital-boost/madameals" class="block px-4 py-2.5 text-xs text-stone-700 hover:bg-stone-50 hover:text-orange-600 rounded-xl transition-colors">The Madameals restaurant</a>
                     </div>
                 </div>
-                <a href="https://srcontact-ni.github.io/digital-boost/index.html#contact" class="bg-stone-900 hover:bg-orange-600 text-white px-5 py-2 rounded-full transition-all hover:scale-105 shadow-sm shadow-stone-900/10">On discute ? ☀️</a>
+                <a href="#contact" class="bg-stone-900 hover:bg-orange-600 text-white px-5 py-2 rounded-full transition-all hover:scale-105 shadow-sm shadow-stone-900/10">On discute ? ☀️</a>
             </div>
             
             <button id="menu-btn" class="md:hidden text-2xl text-stone-800 focus:outline-none z-50 p-2">☰</button>
         </nav>
 
-        <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden fixed inset-0 bg-stone-50 flex flex-col justify-center items-center gap-6 z-40 px-6 w-full max-w-full box-border">
-            <a href="https://srcontact-ni.github.io/digital-boost/index.html#services" class="mobile-link text-xl font-bold text-stone-800 hover:text-orange-600 transition-colors">Services</a>
+            <a href="#services" class="mobile-link text-xl font-bold text-stone-800 hover:text-orange-600 transition-colors">Services</a>
             <div class="w-full max-w-xs text-center border-t border-b border-stone-200/60 py-4 my-2 space-y-3">
                 <p class="text-xs font-bold uppercase tracking-wider text-stone-400">Mes Projets</p>
                 <div class="grid grid-cols-1 gap-2 max-h-48 overflow-y-auto px-2">
@@ -74,47 +59,38 @@
                     <a href="https://srcontact-ni.github.io/digital-boost/madameals" class="mobile-link block text-sm font-semibold text-stone-600 py-1">The Madameals</a>
                 </div>
             </div>
-            <a href="https://srcontact-ni.github.io/digital-boost/index.html#contact" class="mobile-link bg-stone-900 text-white font-semibold px-8 py-3 rounded-full w-full max-w-xs text-center shadow-md">On discute ? ☀️</a>
+            <a href="#contact" class="mobile-link bg-stone-900 text-white font-semibold px-8 py-3 rounded-full w-full max-w-xs text-center shadow-md">On discute ? ☀️</a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-<!-- LE BACKGROUND SOLAIRE : Fondu vertical parfait vers le gris initial (bg-stone-50) -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none z-0 overflow-hidden">
-            
-        <!-- Le rond lumineux d'origine -->
         <div class="absolute top-[-15%] left-[10%] sm:left-[20%] w-[450px] sm:w-[650px] h-[450px] sm:h-[650px] bg-gradient-to-tr from-amber-300 via-orange-400 to-rose-400 rounded-full blur-[80px] sm:blur-[130px] opacity-50 sm:opacity-45 animate-glow"></div>
-        
-        <!-- LE MASQUE DE TRANSITION : Il applique un dégradé qui s'assombrit/se fond vers la couleur stone-50 en bas -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-50 pointer-events-none"></div>
     </div>
 
-    <!-- HERO SECTION (Toujours propre, stable et calée en largeur) -->
     <section class="relative min-h-screen flex items-center pt-20 pb-12 z-10 w-full max-w-full box-border">
         <div class="max-w-5xl mx-auto px-6 w-full text-center md:text-left grid grid-cols-1 md:grid-cols-12 gap-12 items-center box-border relative">
             
-            <!-- Texte principal -->
             <div class="space-y-6 md:col-span-7 min-w-0">
-                <div class="inline-flex items-center gap-2 bg-orange-100/80 border border-orange-200/50 px-3 py-1 rounded-full text-orange-800 text-xs font-bold uppercase tracking-wider">
+                <div class="inline-flex items-center gap-2 bg-orange-100/80 border border-orange-200/50 px-3 py-1 rounded-full text-orange-800 text-xs font-bold uppercase tracking-wider shadow-sm animate-pulse">
                     <span>⚡ Disponible Alternance 2026</span>
                 </div>
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.1] break-words">
-                    Propulsons votre présence web <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">avec énergie</span>.
+                    Propulsons votre présence web <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500">avec énergie</span>.
                 </h1>
                 <p class="text-base sm:text-lg text-stone-600 max-w-xl mx-auto md:mx-0 font-medium leading-relaxed">
                     Intégration de maquettes aux petits oignons, optimisation de contenus et chasses aux bugs UX. Le tout propulsé par de la rigueur et une bonne dose d'humeur.
                 </p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-                    <a href="#projets" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-full transition-all shadow-md shadow-orange-500/20 hover:-translate-y-0.5">
+                    <a href="#projets" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-6 py-3.5 rounded-full transition-all shadow-md shadow-orange-500/20 hover:-translate-y-0.5 hover:shadow-lg">
                         Découvrir mes projets
                     </a>
-                    <a href="#services" class="bg-white/80 hover:bg-white text-stone-800 font-semibold px-6 py-3.5 rounded-full border border-stone-200 shadow-sm transition-all">
+                    <a href="#services" class="bg-white/80 hover:bg-white text-stone-800 font-semibold px-6 py-3.5 rounded-full border border-stone-200 shadow-sm transition-all hover:-translate-y-0.5">
                         Ce que je fais
                     </a>
                 </div>
             </div>
 
-            <!-- Carte Visuelle Solaire (Desktop uniquement) -->
             <div class="hidden md:flex md:col-span-5 justify-center">
                 <div class="relative bg-white/40 backdrop-blur-md p-6 rounded-[32px] border border-white/60 shadow-xl max-w-sm w-full group hover:rotate-1 transition-transform duration-300">
                     <div class="aspect-square bg-gradient-to-tr from-orange-500 to-amber-400 rounded-2xl flex items-center justify-center text-6xl shadow-inner animate-pulse duration-1000">
@@ -131,27 +107,17 @@
         </div>
     </section>
 
-<!-- SECTION PROFIL -->
-    <section class="relative z-10 pt-8 pb-20">
+    <section class="relative z-10 pb-20">
         <div class="max-w-5xl mx-auto px-6">
-            
-            <!-- Séparateur horizontal subtil en dégradé pour marquer la transition sans enfermer -->
-            <div class="w-full h-px bg-gradient-to-r from-transparent via-stone-200 to-transparent mb-16"></div>
-            
-            <!-- Alignement horizontal pur, centré verticalement (items-center) pour la légèreté -->
             <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                 
-                <!-- Zone Photo épurée : Plus de grosse carte autour, juste ton profil mis en valeur -->
                 <div class="flex-shrink-0 w-full max-w-[200px] sm:max-w-[240px]">
-                    <div class="aspect-square w-full bg-gradient-to-br from-orange-100/50 to-white rounded-full overflow-hidden border border-white p-1 shadow-md">
-                        <img src="assets/img/photo-sarobidy-transparent.png" alt="Sarobidy R." class="w-full h-full object-cover rounded-full">
+                    <div class="aspect-square w-full bg-gradient-to-br from-orange-400 via-amber-300 to-rose-400 rounded-full overflow-hidden border-2 border-white p-1 shadow-lg shadow-orange-500/10">
+                        <img src="assets/img/photo-sarobidy-transparent.png" alt="Sarobidy R." class="w-full h-full object-cover rounded-full bg-white">
                     </div>
                 </div>
 
-                <!-- Zone Contenu : Habillée des codes graphiques textuels du Hero -->
                 <div class="flex-1 space-y-5 text-center md:text-left">
-                    
-                    <!-- Les étiquettes demandées flottent légitimement au-dessus du texte -->
                     <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
                         <span class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm shadow-orange-500/10">
                             ⚡ Terrain Commercial & Digital
@@ -161,8 +127,6 @@
                         </span>
                     </div>
                     
-                    <!-- Ton texte de présentation avec la même typo impactante que le Hero -->
-                    <!-- Corps du texte de présentation corrigé sans le <br> forcé -->
                     <p class="text-stone-600 text-base sm:text-lg font-normal leading-relaxed text-justify md:text-left">
                         <span class="text-stone-950 font-black block mb-3 text-xl sm:text-2xl tracking-tight leading-snug">
                             Double culture terrain, digital... et un tempérament <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">100 % solaire</span>.
@@ -174,51 +138,47 @@
                             Ma spécialisation en gestion de projet digital me permet de <span class="italic font-medium text-stone-950">traduire vos besoins commerciaux en solutions web concrètes</span> à travers une approche structurée, collaborative et toujours guidée par le goût du travail bien fait. L'énergie positive en prime !
                         </span>
                     </p>
-            
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- SECTIONS SERVICES -->
-        <section id="services" class="py-24 bg-white border-y border-stone-200/50 relative z-10">
-            <div class="max-w-5xl mx-auto px-6">
-                
-                <!-- CORRECTION ICI : Passage de max-w-md à max-w-2xl pour laisser le titre respirer sur une seule ligne -->
-                <div class="max-w-2xl mb-16">
-                    <p class="text-orange-600 font-extrabold text-xs tracking-widest uppercase">Mes Services</p>
-                    <h2 class="text-3xl font-black text-stone-950 mt-1">Un boost opérationnel pour vos projets</h2>
-                </div>
+    <section id="services" class="py-24 bg-white border-y border-stone-200/50 relative z-10">
+        <div class="max-w-5xl mx-auto px-6">
+            
+            <div class="max-w-2xl mb-16 text-center md:text-left">
+                <p class="text-orange-600 font-extrabold text-xs tracking-widest uppercase">Mes Services</p>
+                <h2 class="text-3xl font-black text-stone-950 mt-1">Un boost opérationnel pour vos projets</h2>
+            </div>
 
-                <!-- Grille magique automatique -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-orange-500/30 transition-all group">
-                        <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center font-bold text-lg">🚀</div>
-                        <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2">Renfort Digital</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Prête à intégrer vos équipes en alternance pour soutenir vos opérations marketing et l'intégration de maquettes.</p>
-                    </div>
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-orange-500/30 transition-all group">
-                        <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center font-bold text-lg">💻</div>
-                        <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2">Sites Vitrines & Landings</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Conception et refonte d'interfaces légères, rapides et surtout conçues pour convertir vos visiteurs.</p>
-                    </div>
-                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-orange-500/30 transition-all group">
-                        <div class="w-10 h-10 bg-stone-900 text-stone-100 rounded-xl flex items-center justify-center font-bold text-lg">🔍</div>
-                        <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2">Audit & Tests UX</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Analyse minutieuse de vos parcours utilisateurs et chasse aux bugs pour éliminer toutes les frictions.</p>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 group">
+                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center font-bold text-lg group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-amber-400 group-hover:text-white transition-all duration-300">🚀</div>
+                    <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2 group-hover:text-orange-600 transition-colors">Renfort Digital</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Prête à intégrer vos équipes en alternance pour soutenir vos opérations marketing et l'intégration de maquettes.</p>
+                </div>
+                <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-amber-500/40 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300 group">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center font-bold text-lg group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-amber-500 group-hover:to-orange-400 group-hover:text-white transition-all duration-300">💻</div>
+                    <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2 group-hover:text-amber-600 transition-colors">Sites Vitrines & Landings</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Conception et refonte d'interfaces légères, rapides et surtout conçues pour convertir vos visiteurs.</p>
+                </div>
+                <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 hover:border-rose-500/40 hover:shadow-xl hover:shadow-rose-500/5 transition-all duration-300 group">
+                    <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center font-bold text-lg group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-rose-500 group-hover:to-orange-400 group-hover:text-white transition-all duration-300">🔍</div>
+                    <h3 class="text-lg font-bold text-stone-950 mt-4 mb-2 group-hover:text-rose-600 transition-colors">Audit & Tests UX</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Analyse minutieuse de vos parcours utilisateurs et chasse aux bugs pour éliminer toutes les frictions.</p>
                 </div>
             </div>
-        </section>
 
-    <!-- SECTION PROJETS / EXPÉRIENCES -->
+        </div>
+    </section>
+
     <section id="projets" class="py-24 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
-            <div class="mb-16">
+            
+            <div class="mb-16 text-center md:text-left">
                 <p class="text-amber-600 font-extrabold text-xs tracking-widest uppercase">Mon Parcours</p>
-                <h2 class="text-3xl font-black text-stone-950 mt-1">Des experiences concretes, du concret qui tourne</h2>
-                
+                <h2 class="text-3xl font-black text-stone-950 mt-1">Des expériences concrètes, du concret qui tourne</h2>
                 <p class="text-stone-600 text-sm md:text-base italic mt-3 max-w-full leading-relaxed">
                     Passer de l'optique à l'hôtellerie ou au high-tech m'a appris une chose : je m'adapte à tous les terrains (et à tous les clients !).
                 </p>
@@ -226,59 +186,55 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- 1. Logis Hôtels -->
-                <a href="https://srcontact-ni.github.io/digital-boost/logishotels" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/logishotels" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
-                            <span class="text-[10px] bg-amber-100 text-amber-950 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🏨 Alternance • 1 an</span>
+                            <span class="text-[10px] bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">🏨 Alternance • 1 an</span>
                         </div>
-                        <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-amber-600 transition-colors">Logis Hôtels</h3>
+                        <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-orange-600 transition-colors">Logis Hôtels</h3>
                         <p class="text-stone-600 text-xs leading-relaxed mb-4">
                             Intégration web et soutien opérationnel. J'ai travaillé sur la refonte des contenus des coffrets cadeaux et optimisé les pages e-merchandising pour booster l'expérience utilisateur.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">Intégration</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">E-merchandising</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">Intégration</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">E-merchandising</span>
                     </div>
                 </a>
 
-                <!-- 2. EVA VISION -->
-                <a href="https://srcontact-ni.github.io/digital-boost/evavision" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/evavision" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
-                            <span class="text-[10px] bg-orange-100 text-orange-950 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🕶️ Alternance • 6 mois</span>
+                            <span class="text-[10px] bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">🕶️ Alternance • 6 mois</span>
                         </div>
                         <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-orange-600 transition-colors">EVA VISION</h3>
                         <p class="text-stone-600 text-xs leading-relaxed mb-4">
                             Soutien à l'intégration et optimisation d'interfaces. Focus complet sur le design responsive, la fluidité de la navigation et la mise en valeur de catalogues optiques.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">Responsive</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">UX/UI</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">Responsive</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">UX/UI</span>
                     </div>
                 </a>
 
-                <!-- 3. Etikashion -->
-                <a href="https://srcontact-ni.github.io/digital-boost/etikashion" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/etikashion" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
                             <span class="text-[10px] bg-stone-100 text-stone-800 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🛍️ Projet Scolaire • 6 mois</span>
                         </div>
-                        <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-amber-600 transition-colors">Etikashion</h3>
+                        <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-orange-600 transition-colors">Etikashion</h3>
                         <p class="text-stone-600 text-xs leading-relaxed mb-4">
                             Conception de A à Z d'une boutique e-commerce écoresponsable sous WordPress. Rédaction de contenus ciblés, configuration du catalogue et optimisation pour le SEO naturel.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">WordPress</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">SEO</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">WordPress</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">SEO</span>
                     </div>
                 </a>
 
-                <!-- 4. Maison Audio Center -->
-                <a href="https://srcontact-ni.github.io/digital-boost/maisonaudiocenter" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/maisonaudiocenter" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
                             <span class="text-[10px] bg-stone-100 text-stone-800 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🔊 Projet Fictif • 6 mois</span>
@@ -288,43 +244,41 @@
                             Maquettage et développement de la structure d'un site vitrine haut de gamme. Optimisation minutieuse du balisage HTML pour garantir un référencement technique irréprochable.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">HTML/CSS</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">SEO Technique</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">HTML/CSS</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">SEO Technique</span>
                     </div>
                 </a>
 
-                <!-- 5. WebApp Candidatures -->
-                <a href="https://srcontact-ni.github.io/digital-boost/webcandidatures" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/webcandidatures" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
-                            <span class="text-[10px] bg-orange-100 text-orange-950 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">⚙️ Projet Perso • 2 mois</span>
+                            <span class="text-[10px] bg-stone-100 text-stone-800 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">⚙️ Projet Perso • 2 mois</span>
                         </div>
                         <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-orange-600 transition-colors">Web App - Candidatures</h3>
                         <p class="text-stone-600 text-xs leading-relaxed mb-4">
                             Création d'un outil d'automatisation interne. Scripting avec Google AppScript pour générer des rappels automatiques directement synchronisés avec l'agenda Google.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">AppScript</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">Automation</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">AppScript</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">Automation</span>
                     </div>
                 </a>
 
-                <!-- 6. The Madameals restaurant -->
-                <a href="https://srcontact-ni.github.io/digital-boost/madameals" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                <a href="https://srcontact-ni.github.io/digital-boost/madameals" class="bg-white p-6 rounded-[32px] border border-stone-200/60 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                     <div>
                         <div class="mb-4">
-                            <span class="text-[10px] bg-amber-100 text-amber-950 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🍳 Projet Vitrine • 3 mois</span>
+                            <span class="text-[10px] bg-stone-100 text-stone-800 font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">🍳 Projet Vitrine • 3 mois</span>
                         </div>
                         <h3 class="text-lg font-black text-stone-950 mb-2 group-hover:text-orange-600 transition-colors">The Madameals restaurant</h3>
                         <p class="text-stone-600 text-xs leading-relaxed mb-4">
                             Création d'une interface sur-mesure pour un établissement culinaire. Intégration d'un menu digital adaptatif et optimisation du référencement local pour attirer les clients en salle.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-stone-100">
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">UI Design</span>
-                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md">SEO Local</span>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">UI Design</span>
+                        <span class="text-[10px] font-semibold bg-stone-50 text-stone-600 px-2 py-0.5 rounded-md group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">SEO Local</span>
                     </div>
                 </a>
 
@@ -332,78 +286,74 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="py-24 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
+            
             <div class="text-center max-w-2xl mx-auto">
                 <h2 class="text-3xl font-black text-stone-950">Discutons de votre prochain boost ? ☀️</h2>
                 <p class="text-stone-600 text-sm mt-2 mb-12">Une opportunité d'alternance, un projet freelance, ou juste envie de dire bonjour ? Écrivez-moi !</p>
             </div>
             
-            <!-- FORMULAIRE DE CONTACT (Design original préservé, éléments Formspree ajoutés) -->
-            <form 
-            action="https://formspree.io/f/mjgqwdqy" 
-            method="POST"
-            class="bg-white p-8 rounded-3xl border border-stone-200 shadow-md max-w-2xl mx-auto space-y-4"
-            >
-            <!-- Ligne supérieure : Nom complet et E-mail (structure grid d'origine) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="space-y-1">
-                    <!-- Design d'origine maintenu -->
-                    <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Nom et Prénom</label>
-                    <!-- Technique : name="name" et required -->
-                    <input type="text" name="name" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+            <form action="https://formspree.io/f/mjgqwdqy" method="POST" class="bg-white p-8 rounded-3xl border border-stone-200 shadow-md max-w-2xl mx-auto space-y-4 hover:border-orange-500/20 hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Nom et Prénom</label>
+                        <input type="text" name="name" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">E-mail</label>
+                        <input type="email" name="_replyto" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                    </div>
                 </div>
+
                 <div class="space-y-1">
-                    <!-- Design d'origine maintenu -->
-                    <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">E-mail</label>
-                    <!-- Technique : name="_replyto" et required -->
-                    <input type="email" name="_replyto" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                    <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Objet de votre demande</label>
+                    <select name="subject" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                        <option value="" disabled selected>Choisir une option...</option>
+                        <option>Opportunité (CDD/CDI/Alternance)</option>
+                        <option>Projet Freelance</option>
+                        <option>Simple prise de contact</option>
+                    </select>
                 </div>
-            </div>
 
-            <!-- NOUVEAU : Champ Objet (Menu déroulant intégré avec ton design) -->
-            <div class="space-y-1">
-                <!-- Design d'origine maintenu -->
-                <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Objet de votre demande</label>
-                <!-- Technique : name="subject" et required. Design : classes Tailwind d'origine appliquées au select -->
-                <select name="subject" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors">
-                    <option value="" disabled selected>Choisir une option...</option>
-                    <option>Opportunité (CDD/CDI/Alternance)</option>
-                    <option>Projet Freelance</option>
-                    <option>Simple prise de contact</option>
-                </select>
-            </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Message</label>
+                    <textarea name="message" rows="4" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"></textarea>
+                </div>
 
-            <!-- Champ Message (Design d'origine maintenu) -->
-            <div class="space-y-1">
-                <!-- Design d'origine maintenu -->
-                <label class="text-xs font-bold text-stone-500 uppercase tracking-wider">Message</label>
-                <!-- Technique : name="message" et required -->
-                <textarea name="message" rows="4" required class="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"></textarea>
-            </div>
+                <button type="submit" class="w-full bg-stone-950 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl transition-colors shadow-md hover:shadow-lg">Envoyer le message ✨</button>
+            </form>
 
-            <!-- Bouton d'envoi (Design d'origine maintenu) -->
-            <button type="submit" class="w-full bg-stone-950 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl transition-colors shadow-md">Envoyer le message ✨</button>
-        </form>
         </div>
     </section>
 
-</body>
+    <footer class="bg-stone-50 border-t border-stone-200/60 py-8 relative z-10">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-medium text-stone-500">
+            <div>
+                © 2026 digital.boost — Conçu avec soin et énergie. ☀️
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#services" class="hover:text-stone-900 transition-colors">Services</a>
+                <a href="#projets" class="hover:text-stone-900 transition-colors">Projets</a>
+                <a href="https://linkedin.com" target="_blank" class="text-stone-700 hover:text-orange-600 transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
-<!-- BANDEAU FOOTER -->
-<footer class="bg-stone-50 border-t border-stone-200/60 py-8 relative z-10">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-medium text-stone-500">
-        <div>
-            © 2026 digital.boost — Conçu avec soin et énergie. ☀️
-        </div>
-        <div class="flex items-center gap-6">
-            <a href="#services" class="hover:text-stone-900 transition-colors">Services</a>
-            <a href="#projets" class="hover:text-stone-900 transition-colors">Projets</a>
-            <a href="https://linkedin.com" target="_blank" class="text-stone-700 hover:text-orange-600 font-bold flex items-center gap-1 transition-colors">
-                LinkedIn ↗
-            </a>
-        </div>
-    </div>
-</footer>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+            menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    </script>
+
+</body>
 </html>
