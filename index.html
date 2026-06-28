@@ -64,12 +64,15 @@
     </header>
 
     <!-- UNIQUE BACKGROUND LUMINEUX DU SOMMET : Intense, radial et fondu parfait vers le gris/stone-50 -->
+
     <div class="absolute top-0 left-0 right-0 w-full h-[750px] pointer-events-none z-0 overflow-hidden select-none">
-        <div class="absolute inset-0 opacity-80 mix-blend-multiply sm:opacity-90 animate-glow"
-            style="background: radial-gradient(circle 450px at 50% 15%, rgba(255, 69, 0, 0.45) 0%, rgba(249, 115, 22, 0.3) 40%, rgba(245, 158, 11, 0.15) 70%, transparent 100%);">
+        <!-- Halo principal : Intense derrière les textes, s'éteint complètement en gris à 550px du centre -->
+        <div class="absolute inset-0 opacity-95 animate-glow"
+            style="background: radial-gradient(circle 550px at 50% 30%, rgba(255, 69, 0, 0.85) 0%, rgba(249, 115, 22, 0.55) 40%, rgba(245, 158, 11, 0.15) 75%, rgb(248, 245, 242) 100%);">
         </div>
-        <div class="absolute inset-0 opacity-50 sm:opacity-60"
-            style="background: radial-gradient(circle 600px at 50% 10%, rgba(249, 115, 22, 0.25) 0%, rgba(251, 146, 60, 0.1) 50%, transparent 100%);">
+        <!-- Halo de douceur : Harmonise le contraste et sature le cœur sans étendre la lumière vers le bas -->
+        <div class="absolute inset-0 opacity-30 mix-blend-multiply"
+            style="background: radial-gradient(circle 500px at 50% 30%, rgba(249, 115, 22, 0.6) 0%, rgba(251, 146, 60, 0.2) 60%, rgb(248, 245, 242) 100%);">
         </div>
     </div>
 
