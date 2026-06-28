@@ -79,19 +79,19 @@
     </header>
 
     <!-- HERO SECTION -->
-    <!-- 4. VRAI FIX : 'min-h-screen' s'adapte automatiquement et s'agrandit si le contenu pousse sur mobile, tout reste à l'intérieur -->
-<!-- HERO SECTION (Paramètres de largeur parfaits conservés) -->
-    <!-- On passe le padding haut à pt-20 pour remonter tout le contenu proprement -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-12 z-10 w-full max-w-full box-border overflow-hidden">
+<!-- LE BACKGROUND SOLAIRE : Fondu vertical parfait vers le gris initial (bg-stone-50) -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none z-0 overflow-hidden">
+            
+        <!-- Le rond lumineux d'origine -->
+        <div class="absolute top-[-15%] left-[10%] sm:left-[20%] w-[450px] sm:w-[650px] h-[450px] sm:h-[650px] bg-gradient-to-tr from-amber-300 via-orange-400 to-rose-400 rounded-full blur-[80px] sm:blur-[130px] opacity-50 sm:opacity-45 animate-glow"></div>
         
-        <!-- LE BACKGROUND ORANGE : Maintenant centré et confiné STRICTEMENT dans le Hero -->
-        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
-            <!-- Rond de couleur principal (Plus grand et moins flouté sur mobile pour garder l'opacité) -->
-            <div class="absolute w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-gradient-to-tr from-amber-300 via-orange-400 to-rose-400 rounded-full blur-[60px] sm:blur-[120px] opacity-60 animate-glow"></div>
-        </div>
+        <!-- LE MASQUE DE TRANSITION : Il applique un dégradé qui s'assombrit/se fond vers la couleur stone-50 en bas -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-50 pointer-events-none"></div>
+    </div>
 
-        <!-- CONTENU DU HERO (Texte et Boutons) -->
-        <div class="max-w-5xl mx-auto px-6 w-full text-center md:text-left grid grid-cols-1 md:grid-cols-12 gap-12 items-center box-border relative z-10">
+    <!-- HERO SECTION (Toujours propre, stable et calée en largeur) -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-12 z-10 w-full max-w-full box-border">
+        <div class="max-w-5xl mx-auto px-6 w-full text-center md:text-left grid grid-cols-1 md:grid-cols-12 gap-12 items-center box-border relative">
             
             <!-- Texte principal -->
             <div class="space-y-6 md:col-span-7 min-w-0">
@@ -114,7 +114,7 @@
                 </div>
             </div>
 
-            <!-- Carte Visuelle Solaire (PC uniquement) -->
+            <!-- Carte Visuelle Solaire (Desktop uniquement) -->
             <div class="hidden md:flex md:col-span-5 justify-center">
                 <div class="relative bg-white/40 backdrop-blur-md p-6 rounded-[32px] border border-white/60 shadow-xl max-w-sm w-full group hover:rotate-1 transition-transform duration-300">
                     <div class="aspect-square bg-gradient-to-tr from-orange-500 to-amber-400 rounded-2xl flex items-center justify-center text-6xl shadow-inner animate-pulse duration-1000">
